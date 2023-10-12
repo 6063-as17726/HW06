@@ -3,7 +3,9 @@ let font;
 let size = 40;
 
 let s0 = "The way a crow"; 
-//let y = 10;  
+let xPos = width/2;
+let yPos = 50; 
+let yVel = 2;   
 
 
 function preload() {
@@ -30,7 +32,11 @@ function draw() {
     //else if (word.length%2 ==0) {
       //midpoint = words.length/2; 
     //}
-    y = y + distance; 
-    text (word, width/2, y); 
+    //y = y + distance; 
+    text (word, xPos, yPos);
+    yPos+= yVel; 
+    if (ypos>height) {
+      yPos = 50 ; 
+    } 
   } 
 }
