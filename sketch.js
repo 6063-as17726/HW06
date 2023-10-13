@@ -1,6 +1,6 @@
 let font;
 let size = 40;
-let s0 = "The way a crow"; 
+let s0 = "it is snowing outside"; 
 let xPos;
 let yPos = 50; 
 let yVel = 2;   
