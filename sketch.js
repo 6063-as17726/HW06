@@ -1,42 +1,36 @@
 let font;
-
 let size = 40;
-
 let s0 = "The way a crow"; 
-let xPos = width/2;
+let xPos;
 let yPos = 50; 
 let yVel = 2;   
-
+let words;
 
 function preload() {
-  //font = loadFont("./ostrich-sans-regular.ttf");
+  // Load your font here if needed
+  // font = loadFont("./ostrich-sans-regular.ttf");
 }
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   textFont("monospace");
-  textSize(24);
+  textSize(size);
   textAlign(LEFT, TOP);
   fill(255);
   words = s0.split(" ");
+  xPos = width / 2;
 }
 
 function draw() {
   background(0, 191, 255); 
-  let distance = height/words.length; 
+  let distance = height / words.length; 
   let y = distance; 
   for (let i = 0; i < words.length; i++) {
     let word = words[i].toUpperCase(); 
-    //if(words.length%2 ==1) {
-     //midpoint = words.length+1/2; 
-    //}
-    //else if (word.length%2 ==0) {
-      //midpoint = words.length/2; 
-    //}
-    //y = y + distance; 
-    text (word, xPos, yPos);
-    yPos+= yVel; 
-    if (ypos>height) {
-      yPos = 50 ; 
+    text(word, xPos, yPos);
+    yPos += yVel; 
+    if (yPos > height) {
+      yPos = 50; 
     } 
   } 
 }
