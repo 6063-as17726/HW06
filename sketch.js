@@ -25,12 +25,15 @@ function draw() {
   background(0, 191, 255); 
   let distance = height / words.length; 
   let y = distance; 
+  let word;
+  if (yPos > height) {
+    yPos = -1 * words.length * 50
+  } else {
+    yPos += yVel;
+  }
   for (let i = 0; i < words.length; i++) {
-    let word = words[i].toUpperCase(); 
-    text(word, xPos, yPos);
-    yPos += yVel; 
-    if (yPos > height) {
-      yPos = 50; 
-    } 
-  } 
+    word = words[i].toUpperCase();
+    word_y = i * 50 + yPos;
+    text(word, xPos, word_y);
+  }
 }
